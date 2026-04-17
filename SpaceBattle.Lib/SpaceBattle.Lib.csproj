@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <!-- 6.5: статический анализ кода -->
+    <EnableNETAnalyzers>true</EnableNETAnalyzers>
+    <AnalysisLevel>latest</AnalysisLevel>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+
+  <!-- 6.8: Roslyn для динамической компиляции C# — через NuGet (dotnet restore) -->
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.9.2"
+                      Condition="'$(ROSLYN_FROM_NUGET)'=='true'" />
+  </ItemGroup>
+
+  <!-- Fallback: Roslyn прямо из .NET SDK (без NuGet, для CI/offline) -->
+  <ItemGroup Condition="'$(ROSLYN_FROM_NUGET)'!='true'">
+    <Reference Include="Microsoft.CodeAnalysis">
+      <HintPath>/usr/lib/dotnet/sdk/8.0.125/Roslyn/bincore/Microsoft.CodeAnalysis.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp">
+      <HintPath>/usr/lib/dotnet/sdk/8.0.125/Roslyn/bincore/Microsoft.CodeAnalysis.CSharp.dll</HintPath>
+      <Private>true</Private>
+    </Reference>
+  </ItemGroup>
+</Project>
