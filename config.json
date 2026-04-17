@@ -1,0 +1,36 @@
+{
+  "fieldWidth": 800,
+  "fieldHeight": 600,
+  "playersCount": 2,
+  "shipsPerPlayer": 3,
+  "initialFuel": 100,
+  "timeQuantumMs": 50,
+  "ships": [
+    { "id": "ship-1-1", "playerId": 1, "x": 100, "y": 150, "angle": 0 },
+    { "id": "ship-1-2", "playerId": 1, "x": 100, "y": 300, "angle": 0 },
+    { "id": "ship-1-3", "playerId": 1, "x": 100, "y": 450, "angle": 0 },
+    { "id": "ship-2-1", "playerId": 2, "x": 700, "y": 150, "angle": 180 },
+    { "id": "ship-2-2", "playerId": 2, "x": 700, "y": 300, "angle": 180 },
+    { "id": "ship-2-3", "playerId": 2, "x": 700, "y": 450, "angle": 180 }
+  ],
+  "criteria": [
+    {
+      "name": "Корабль 1-1 переместился вправо",
+      "type": "property_check",
+      "objectId": "ship-1-1",
+      "property": "Position.X",
+      "operator": "greater_than",
+      "expectedValue": 100,
+      "weight": 1.0
+    },
+    {
+      "name": "Корабль 1-2 переместился вправо",
+      "type": "property_check",
+      "objectId": "ship-1-2",
+      "property": "Position.X",
+      "operator": "greater_than",
+      "expectedValue": 100,
+      "weight": 1.0
+    }
+  ]
+}

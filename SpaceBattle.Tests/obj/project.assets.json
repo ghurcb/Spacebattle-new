@@ -1,0 +1,50 @@
+{
+  "version": 3,
+  "targets": {
+    "net8.0": {}
+  },
+  "libraries": {},
+  "projectFileDependencyGroups": {
+    "net8.0": []
+  },
+  "packageFolders": {},
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "/home/claude/spacebattle_fixed/SpaceBattle/SpaceBattle.Tests/SpaceBattle.Tests.csproj",
+      "projectName": "SpaceBattle.Tests",
+      "projectPath": "/home/claude/spacebattle_fixed/SpaceBattle/SpaceBattle.Tests/SpaceBattle.Tests.csproj",
+      "packagesPath": "/root/.nuget/packages/",
+      "outputPath": "/home/claude/spacebattle_fixed/SpaceBattle/SpaceBattle.Tests/obj/",
+      "projectStyle": "PackageReference",
+      "fallbackFolders": [],
+      "configFilePaths": [],
+      "originalTargetFrameworks": [
+        "net8.0"
+      ],
+      "sources": {},
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "projectReferences": {
+            "/home/claude/spacebattle_fixed/SpaceBattle/SpaceBattle.Lib/SpaceBattle.Lib.csproj": {
+              "projectPath": "/home/claude/spacebattle_fixed/SpaceBattle/SpaceBattle.Lib/SpaceBattle.Lib.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {}
+    },
+    "frameworks": {
+      "net8.0": {
+        "targetAlias": "net8.0",
+        "dependencies": {},
+        "imports": [],
+        "assetTargetFallback": false,
+        "warn": false,
+        "frameworkReferences": {},
+        "runtimeIdentifierGraphPath": ""
+      }
+    }
+  }
+}
