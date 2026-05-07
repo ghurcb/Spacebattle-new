@@ -69,7 +69,7 @@ namespace SpaceBattle.Lib
                     MetadataReference.CreateFromFile(typeof(IUObject).Assembly.Location),
                     MetadataReference.CreateFromFile(iface.Assembly.Location),
                     MetadataReference.CreateFromFile(
-                        Assembly.Load("System.Runtime").Location),
+                        typeof(System.Runtime.CompilerServices.IsExternalInit).Assembly.Location),
                 };
 
                 var compilation = CSharpCompilation.Create(
@@ -121,7 +121,7 @@ namespace SpaceBattle.Lib
             {
                 var rt   = CsTypeName(m.ReturnType);
                 var prms = string.Join(", ", m.GetParameters()
-                               .Select(p => $"{CsTypeName(p.ParameterType)} {p.Name}"));
+                                .Select(p => $"{CsTypeName(p.ParameterType)} {p.Name}"));
                 var args = string.Join(", ", m.GetParameters().Select(p => p.Name));
                 if (m.ReturnType == typeof(void))
                     sb.AppendLine($"    public void {m.Name}({prms}) " +
