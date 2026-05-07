@@ -4,8 +4,14 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    
+    <!-- Для сборки как .exe -->
+    <SelfContained>false</SelfContained>
   </PropertyGroup>
+
+  <!-- ✅ ГЛАВНОЕ ИСПРАВЛЕНИЕ: ссылка на SpaceBattle.Lib -->
   <ItemGroup>
     <ProjectReference Include="..\SpaceBattle.Lib\SpaceBattle.Lib.csproj" />
   </ItemGroup>
+
 </Project>
